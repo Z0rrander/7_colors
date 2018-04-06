@@ -1,4 +1,4 @@
-void change_color(char perso, char couleur, int taille){
+void change_color(char perso, char couleur, int taille, char* tableau){
 	int positions[taille*taille][2]; // tableau dans lequel on va stocker les positions actuelles possédées par le joueur
 	int compte=0; // un compte utilisé pour remplir le tableau avec les positions
 	int i, j, k;
@@ -7,9 +7,9 @@ void change_color(char perso, char couleur, int taille){
 			positions[i][j]=30 */ // on remplit le tableau d'une position qui n'existe pas
 			
 	//on va chercher les positions du joueur
-	for(i=0;i<30;i++){
-		for(j=0;j<30;j++){
-			if(get_cell(i,j)== perso){
+	for(i=0;i<taille;i++){
+		for(j=0;j<taille;j++){
+			if(get_cell(i,j, *tableau)== perso){
 				positions[compte][1]=i;
 				positions[compte][2]=j;
 				compte=compte+1;
@@ -23,30 +23,30 @@ void change_color(char perso, char couleur, int taille){
 		int x=positions[k][1];
 		int y=positions[k][2];
 		
-		if((x-1!=-1) && (x-1!=30)){
-			if((y-1!=-1) && (y-1!=30)){
-				if(get_cell(x-1,y-1)==couleur){
-					set_cell(x-1,y-1,perso);
+		if((x-1!=-1) && (x-1!=taille)){
+			if((y-1!=-1) && (y-1!=taille)){
+				if(get_cell(x-1,y-1, *tableau)==couleur){
+					set_cell(x-1,y-1,perso, *tableau);
 				}
 			}
 			
-			if((y+1!=-1) && (y+1!=30)){
-				if(get_cell(x-1,y+1)==couleur){
-					set_cell(x-1,y+1,perso);
+			if((y+1!=-1) && (y+1!=taille)){
+				if(get_cell(x-1,y+1, *tableau)==couleur){
+					set_cell(x-1,y+1,perso, tableau);
 				}
 			}
 		}
 		
-		if((x+1!=-1) && (x+1!=30)){
-			if((y-1!=-1) && (y-1!=30)){
-				if(get_cell(x+1,y-1)==couleur){
-					set_cell(x+1,y-1,perso);
+		if((x+1!=-1) && (x+1!=taille)){
+			if((y-1!=-1) && (y-1!=taille)){
+				if(get_cell(x+1,y-1, *tableau)==couleur){
+					set_cell(x+1,y-1,perso, tableau);
 				}
 			}
 			
-			if((y+1!=-1) && (y+1!=30)){
-				if(get_cell(x+1,y+1)==couleur){
-					set_cell(x+1,y+1,perso);
+			if((y+1!=-1) && (y+1!=taille)){
+				if(get_cell(x+1,y+1, *tableau)==couleur){
+					set_cell(x+1,y+1,perso, *tableau);
 				}
 			}
 		}
@@ -55,6 +55,3 @@ void change_color(char perso, char couleur, int taille){
 
 void main(){
 }
-					
-		
-	
