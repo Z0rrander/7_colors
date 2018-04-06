@@ -1,7 +1,6 @@
 #include <time.h>
 #include <stdlib.h>
 
-void generate_board (int taille, char *tableau){
 	
 /** Cette fonction prend en paramètre :
  * int taille : la taille maximale du tableau
@@ -10,21 +9,20 @@ void generate_board (int taille, char *tableau){
 	int i, j; //Compteurs pour accéder aux éléments du tableau
 	int inf = 1, sup = 7; //Bornes inférieures et supérieures pour avoir une couleur aléatoire.
 	int nb_alea; //Nombre aleatoire
-	char color; //Couleur choisie aleatoirement
-	
+
 	srand(time(NULL)); //
 	
-	for (int i = 0; i <= taille; i++){
-		for (int j = 0; j <= taille; j++){
+	for (i = 0; i <= taille; i++){
+		for (j = 0; j <= taille; j++){
 			
 			nb_alea = rand()%(sup - inf) + inf;
 			
 			if ((j == 30) && (i == 0)){				
-				tableau[i][j] == '^';	
+				set_cell(i, j,'^', *tableau);	
 			}
 			
 			if ((j == 0) && (i == 30)){				
-				tableau[i][j] == 'v';	
+				set_cell(i, j,'v', *tableau);	
 			}
 			
 			else {
@@ -33,25 +31,25 @@ void generate_board (int taille, char *tableau){
 								 //choisie aleatoirement
 				
 					case 1 : 
-						color = 'A';
+						set_cell(i, j,'A', *tableau);
 						
 					case 2 : 
-						color = 'B';
+						set_cell(i, j,'B', *tableau);
 						
 					case 3 : 
-						color = 'C';
+						set_cell(i, j,'C', *tableau);
 						
 					case 4 : 
-						color = 'D';
+						set_cell(i, j,'D', *tableau);
 						
 					case 5 : 
-						color = 'E';
+						set_cell(i, j,'E', *tableau);
 						
 					case 6 : 
-						color = 'F';
+						set_cell(i, j,'F', *tableau);
 						
 					case 7 : 
-						color = 'G';	
+						set_cell(i, j,'G', *tableau);	
 					
 			}
 			}
@@ -59,4 +57,6 @@ void generate_board (int taille, char *tableau){
 	}
 
 }
+
+
 
