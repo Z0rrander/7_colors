@@ -13,16 +13,16 @@ void generate_board (int taille, char *tableau){
 
 	srand(time(NULL)); //
 	
-	for (i = 0; i <= taille; i++){
-		for (j = 0; j <= taille; j++){
+	for (i = 0; i < taille; i++){
+		for (j = 0; j < taille; j++){
 			
 			nb_alea = rand()%(sup - inf) + inf;
 			
-			if ((j == 30) && (i == 0)){				
+			if ((j == taille - 1) && (i == 0)){				
 				set_cell(i, j,'^', *tableau);	
 			}
 			
-			if ((j == 0) && (i == 30)){				
+			if ((j == 0) && (i == taille - 1)){				
 				set_cell(i, j,'v', *tableau);	
 			}
 			
