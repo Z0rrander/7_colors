@@ -2,9 +2,6 @@ void change_color(char perso, char couleur, int taille, char* tableau){
 	int positions[taille*taille][2]; // tableau dans lequel on va stocker les positions actuelles possédées par le joueur
 	int compte=0; // un compte utilisé pour remplir le tableau avec les positions
 	int i, j, k;
-	/*for(i=0;i<taille*taille,i++){
-		for(j=0,j<2,j++){
-			positions[i][j]=30 */ // on remplit le tableau d'une position qui n'existe pas
 			
 	//on va chercher les positions du joueur
 	for(i=0;i<taille;i++){
