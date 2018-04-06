@@ -1,6 +1,7 @@
 #include <time.h>
 #include <stdlib.h>
 
+void generate_board (int taille, char *tableau){
 	
 /** Cette fonction prend en paramètre :
  * int taille : la taille maximale du tableau
