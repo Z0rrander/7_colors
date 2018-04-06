@@ -13,10 +13,8 @@
  */
 char board[BOARD_SIZE * BOARD_SIZE] = { 0 }; // Filled with zeros
 
-generate_board(BOARD_SIZE, board); //Generation aleatoire des couleurs dans le tableau (DANS FICHIER DU MEME NOM)
-
 /** Retrieves the color of a given board cell */
-char get_cell(int x, int y, char*board)
+char get_cell(int x, int y, char *board)
 {
     return board[y * BOARD_SIZE + x];
 }
@@ -52,5 +50,5 @@ int main(void)
 
     print_board();
 
-    return 0; // Tout va bien dans le meilleur des mondes
+    return 0; // Everything went well
 }
