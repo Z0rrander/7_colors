@@ -16,7 +16,7 @@ void generate_board (int taille, char *tableau){
 	for (i = 0; i < taille; i++){
 		for (j = 0; j < taille; j++){
 			
-			nb_alea = rand()%(sup - inf) + inf;
+			nb_alea = rand()%((sup + 1) - inf ) + inf;
 			
 			if ((j == taille - 1) && (i == 0)){				
 				set_cell(i, j,'^', *tableau);	
