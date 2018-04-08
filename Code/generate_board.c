@@ -5,7 +5,7 @@ void generate_board (int taille, char *tableau){
 	
 /** Cette fonction prend en paramètre :
  * int taille : la taille maximale du tableau
- * char *board : le tableau initialisé avec tous les zeros
+ * char *tableau : le tableau initialisé avec tous les zeros
  */
 	int i, j; //Compteurs pour accéder aux éléments du tableau
 	int inf = 1, sup = 7; //Bornes inférieures et supérieures pour avoir une couleur aléatoire.
