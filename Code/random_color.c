@@ -1,7 +1,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-char random_color(){
+char random_color(){ // sort n'importe quelle couleur
 	srand(time(NULL)); 
 	int nb_alea; //Nombre aleatoire
 	int inf = 1, sup = 7; //Bornes inférieures et supérieures pour avoir une couleur aléatoire.
