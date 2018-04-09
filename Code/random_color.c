@@ -5,28 +5,31 @@ char random_color(){
 	srand(time(NULL)); 
 	int nb_alea; //Nombre aleatoire
 	int inf = 1, sup = 7; //Bornes inférieures et supérieures pour avoir une couleur aléatoire.
+	nb_alea = rand()%((sup + 1) - inf ) + inf;
+	char color;
 	switch(nb_alea){ //On regarde chaque cas pour déterminer la couleur 
 							 //choisie aleatoirement				
 					case 1 : 
-						set_cell(i, j,'A', tableau);
+						color='A';
 						
 					case 2 : 
-						set_cell(i, j,'B', tableau);
+						color='B';
 						
 					case 3 : 
-						set_cell(i, j,'C', tableau);
+						color='C';
 						
 					case 4 : 
-						set_cell(i, j,'D', tableau);
+						color='D';
 						
 					case 5 : 
-						set_cell(i, j,'E', tableau);
+						color='E';
 						
 					case 6 : 
-						set_cell(i, j,'F', tableau);
+						color='F';
 						
 					case 7 : 
-						set_cell(i, j,'G', tableau);	
+						color='G';	
 					}
+	return color;
 					
 }
