@@ -1,5 +1,6 @@
 #include <time.h>
 #include <stdlib.h>
+#include "prototype.h"
 
 void generate_board (int taille, char *tableau){
 	
@@ -19,11 +20,11 @@ void generate_board (int taille, char *tableau){
 			nb_alea = rand()%((sup + 1) - inf ) + inf;
 			
 			if ((j == taille - 1) && (i == 0)){				
-				set_cell(i, j,'^', *tableau);	
+				set_cell(i, j,'^', tableau);	
 			}
 			
-			if ((j == 0) && (i == taille - 1)){				
-				set_cell(i, j,'v', *tableau);	
+			else if ((j == 0) && (i == taille - 1)){				
+				set_cell(i, j,'v', tableau);	
 			}
 			
 			else {
@@ -32,26 +33,26 @@ void generate_board (int taille, char *tableau){
 								 //choisie aleatoirement
 				
 					case 1 : 
-						set_cell(i, j,'A', *tableau);
-						
+						set_cell(i, j,'A', tableau);
+						break;
 					case 2 : 
-						set_cell(i, j,'B', *tableau);
-						
+						set_cell(i, j,'B', tableau);
+						break;
 					case 3 : 
-						set_cell(i, j,'C', *tableau);
-						
+						set_cell(i, j,'C', tableau);
+						break;
 					case 4 : 
-						set_cell(i, j,'D', *tableau);
-						
+						set_cell(i, j,'D', tableau);
+						break;
 					case 5 : 
-						set_cell(i, j,'E', *tableau);
-						
+						set_cell(i, j,'E', tableau);
+						break;
 					case 6 : 
-						set_cell(i, j,'F', *tableau);
-						
+						set_cell(i, j,'F', tableau);
+						break;
 					case 7 : 
-						set_cell(i, j,'G', *tableau);	
-					
+						set_cell(i, j,'G', tableau);	
+						break;
 			}
 			}
 		}
