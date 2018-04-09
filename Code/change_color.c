@@ -2,6 +2,9 @@ void change_color(char perso, char couleur, int taille, char* tableau){
 	int positions[taille*taille][2]; // tableau dans lequel on va stocker les positions actuelles possédées par le joueur
 	int compte=0; // un compte utilisé pour remplir le tableau avec les positions
 	int i, j, k;
+	/*for(i=0;i<taille*taille,i++){
+		for(j=0,j<2,j++){
+			positions[i][j]=30 */ // on remplit le tableau d'une position qui n'existe pas
 			
 	//on va chercher les positions du joueur
 	for(i=0;i<taille;i++){
@@ -21,29 +24,31 @@ void change_color(char perso, char couleur, int taille, char* tableau){
 		int y=positions[k][2];
 		
 		if((x-1!=-1) && (x-1!=taille)){
-			if((y-1!=-1) && (y-1!=taille)){
-				if(get_cell(x-1,y-1, *tableau)==couleur){
-					set_cell(x-1,y-1,perso, *tableau);
+			if((y!=-1) && (y!=taille)){
+				if(get_cell(x-1,y, *tableau)==couleur){
+					set_cell(x-1,y,perso, *tableau);
 				}
 			}
-			
-			if((y+1!=-1) && (y+1!=taille)){
-				if(get_cell(x-1,y+1, *tableau)==couleur){
-					set_cell(x-1,y+1,perso, tableau);
+		}
+		if((x+1!=-1) && (x+1!=taille)){
+			if((y!=-1) && (y!=taille)){
+				if(get_cell(x+1,y, *tableau)==couleur){
+					set_cell(x+1,y,perso, tableau);
 				}
 			}
 		}
 		
-		if((x+1!=-1) && (x+1!=taille)){
-			if((y-1!=-1) && (y-1!=taille)){
-				if(get_cell(x+1,y-1, *tableau)==couleur){
-					set_cell(x+1,y-1,perso, tableau);
+		if((y+1!=-1) && (y+1!=taille)){
+			if((x!=-1) && (x!=taille)){
+				if(get_cell(x,y+1, *tableau)==couleur){
+					set_cell(x,y+1,perso, tableau);
 				}
 			}
-			
-			if((y+1!=-1) && (y+1!=taille)){
-				if(get_cell(x+1,y+1, *tableau)==couleur){
-					set_cell(x+1,y+1,perso, *tableau);
+		}
+		if((y-1!=-1) && (y+1!=taille)){
+			if((x!=-1) && (x!=taille)){
+				if(get_cell(x,y-1, *tableau)==couleur){
+					set_cell(x,y-1,perso, *tableau);
 				}
 			}
 		}
@@ -52,3 +57,4 @@ void change_color(char perso, char couleur, int taille, char* tableau){
 
 void main(){
 }
+				
