@@ -5,9 +5,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 	int positions[taille*taille][2]; // tableau dans lequel on va stocker les positions actuelles possédées par le joueur
 	int compte=0; // un compte utilisé pour remplir le tableau avec les positions
 	int i, j, k, l;
-	/*for(i=0;i<taille*taille,i++){
-		for(j=0,j<2,j++){
-			positions[i][j]=30 */ // on remplit le tableau d'une position qui n'existe pas
+	
 			
 	//on va chercher les positions du joueur
 	for(i=0;i<taille;i++){
@@ -20,7 +18,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 		}
 	}
 	char couleurs[7]; //tableau dans lequel on stocke les couleurs à disposition du joueur
-	int compte2=0;
+	int compte2=0; // un compte utilisé pour remplir le tableau des couleurs
 	char actualcolor;
 	int ilyest=0;// variable indiquant si une couleur est dans un tableau ou non
 	
