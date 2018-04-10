@@ -19,7 +19,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 			}
 		}
 	}
-	char couleurs[7]; //tableau dans lequel on stocke les couleurs
+	char couleurs[7]; //tableau dans lequel on stocke les couleurs à disposition du joueur
 	int compte2=0;
 	char actualcolor;
 	int ilyest=0;// variable indiquant si une couleur est dans un tableau ou non
