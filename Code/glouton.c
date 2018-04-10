@@ -1,4 +1,4 @@
-char random_possible_color(char perso, char *tableau, int taille){ //va choisir la couleur qui est en majorité à sa disposition
+char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui est en majorité à sa disposition
 	int positions[taille*taille][2]; // tableau dans lequel on va stocker les positions actuelles possédées par le joueur
 	int compte=0; // un compte utilisé pour remplir le tableau avec les positions
 	int i, j, k, l;
