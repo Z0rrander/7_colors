@@ -10,7 +10,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 	//on va chercher les positions du joueur
 	for(i=0;i<taille;i++){
 		for(j=0;j<taille;j++){
-			if(get_cell(i,j, *tableau)== perso){
+			if(get_cell(i,j, tableau)== perso){
 				positions[compte][1]=i;
 				positions[compte][2]=j;
 				compte=compte+1;
@@ -30,7 +30,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 		
 		if((x-1!=-1)){
 			for(l=0; l<compte2; l++){
-				actualcolor=get_cell(x-1,y, *tableau);
+				actualcolor=get_cell(x-1,y, tableau);
 				if((actualcolor==couleurs[l]) && (actualcolor!='^') && (actualcolor!='v')){
 					ilyest=1;
 				}
@@ -46,7 +46,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 		
 		if((x+1!=taille)){
 			for(l=0; l<compte2; l++){
-				actualcolor=get_cell(x+1,y, *tableau);
+				actualcolor=get_cell(x+1,y, tableau);
 				if((actualcolor==couleurs[l]) && (actualcolor!='^') && (actualcolor!='v')){
 					ilyest=1;
 				}
@@ -62,7 +62,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 		
 		if((y-1!=-1)){
 			for(l=0; l<compte2; l++){
-				actualcolor=get_cell(x,y-1, *tableau);
+				actualcolor=get_cell(x,y-1, tableau);
 				if((actualcolor==couleurs[l]) && (actualcolor!='^') && (actualcolor!='v')){
 					ilyest=1;
 				}
@@ -78,7 +78,7 @@ char random_possible_color(char perso, char *tableau, int taille){ //sort une co
 		
 		if((y+1!=taille)){
 			for(l=0; l<compte2; l++){
-				actualcolor=get_cell(x,y+1, *tableau);
+				actualcolor=get_cell(x,y+1, tableau);
 				if((actualcolor==couleurs[l]) && (actualcolor!='^') && (actualcolor!='v')){
 					ilyest=1;
 				}
