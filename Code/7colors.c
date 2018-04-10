@@ -55,7 +55,8 @@ int main(void)
 	char c; //Pour la ligne qui vide le buffer du scanf
 	
 	generate_board(BOARD_SIZE, board);
-	while ((score('^',BOARD_SIZE, board)<BOARD_SIZE*BOARD_SIZE/2) && (score('v',BOARD_SIZE, board)<BOARD_SIZE*BOARD_SIZE/2) ){
+	int limite=BOARD_SIZE*BOARD_SIZE/2;
+	while ((score('^',BOARD_SIZE, board)<limite) && (score('v',BOARD_SIZE, board)<limite) ){
 		print_board();
 		
 		// Tour du joueur ^
@@ -85,12 +86,12 @@ int main(void)
 	}
 			
 		//On regarde qui a gagne
-		if (score('^',BOARD_SIZE, board)>450){
+		if (score('^',BOARD_SIZE, board)>limite){
 			print_board();
 			printf("^ a gagné");
 			
 		}
-			if (score('v',BOARD_SIZE, board)>450){
+			if (score('v',BOARD_SIZE, board)>limite){
 			print_board();
 			printf("v a gagné");
 		}
