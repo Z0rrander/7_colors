@@ -11,24 +11,31 @@ char random_color(){ // sort n'importe quelle couleur
 							 //choisie aleatoirement				
 					case 1 : 
 						color='A';
+						break;
 						
 					case 2 : 
 						color='B';
+						break;
 						
 					case 3 : 
 						color='C';
+						break;
 						
 					case 4 : 
 						color='D';
+						break;
 						
 					case 5 : 
 						color='E';
+						break;
 						
 					case 6 : 
 						color='F';
+						break;
 						
 					case 7 : 
-						color='G';	
+						color='G';
+						break;	
 					}
 	return color;
 					
