@@ -1,3 +1,5 @@
+#include "prototype.h"
+
 int char_to_int(char couleur_char){ // associe à chaque couleur A,B,C,D,E,F,G un chiffre entre 0 et 6
 	int couleur_int;
 	
@@ -31,3 +33,4 @@ int char_to_int(char couleur_char){ // associe à chaque couleur A,B,C,D,E,F,G u
 	
 	return couleur_int;
 }
+
