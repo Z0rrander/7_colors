@@ -6,11 +6,13 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 	int i, j, k, l, m;
   int tab[taille][taille];
   char couleurs[7];
-	couleurs[0]='A'; couleurs[1]='B'; couleurs[2]='C'; couleurs[3]='D'; couleurs[4]='E'; couleurs[5]='F'; couleurs[6]='G';
+  couleurs[0]='A'; couleurs[1]='B'; couleurs[2]='C'; couleurs[3]='D'; couleurs[4]='E'; couleurs[5]='F'; couleurs[6]='G';
+  int best_max=0;
+  int pos_best_max=0;
   
-  for(l=0;l<6,l++){
+  for(l=0;l<7,l++){
   
-  for(i=0;i<taille;i++){
+  for(i=0;i<taille;i++){ //on crée un tableau représentant les combinaisons possibles pour chercher la meilleur
 	  for(j=0;j<taille;j++){
       		tab[i][j]=get_cell(i,j, tableau)
     	}
@@ -35,7 +37,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		if((x-1!=-1)){
 			
 			if(tab[x-1][y]==couleur[l]){
-				set_cell(x-1,y,perso, tableau);
+				tab[x-1][y]=perso;
 				positions[compte][1]=x-1;
 				positions[compte][2]=y;
 				compte=compte+1;
@@ -44,7 +46,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		if((x+1!=taille)){
 			
 			if(tab[x+1][y]==couleur[l]){
-				set_cell(x+1,y,perso, tableau);
+				tab[x+1][y]=perso;
           			positions[compte][1]=x+1;
 				positions[compte][2]=y;
 				compte=compte+1;
@@ -55,7 +57,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		if((y+1!=taille)){
 			
 			if(tab[x][y+1]==couleur[l]){
-				set_cell(x,y+1,perso, tableau);
+				tab[x][y+1]=perso;
           			positions[compte][1]=x;
 				positions[compte][2]=y+1;
 				compte=compte+1;
@@ -65,7 +67,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		if((y-1!=-1)){
 			
 			if(tab[x][y-1]==couleur[l]){
-				set_cell(x,y-1,perso, tableau);
+				 tab[x][y-1]=perso;
          			 positions[compte][1]=x;
 				 positions[compte][2]=y-1;
 				 compte=compte+1;
@@ -135,6 +137,11 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		}
 	}
   }
+	if(nb_max+compte-1>best_max{
+		best_max=nb_max+compte-1;
+		pos_best_max=l;
+	}
+		
 	
-	return couleurs[max];
+	return couleurs[pos_best_max];
 }
