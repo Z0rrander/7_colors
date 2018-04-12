@@ -3,7 +3,7 @@
 char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui est en majorité à sa disposition
 	int positions[taille*taille][2]; // tableau dans lequel on va stocker les positions actuelles possédées par le joueur
 	int compte=0; // un compte utilisé pour remplir le tableau avec les positions
-	int i, j, k, l;
+	int i, j, k, l, m;
   int tab[taille][taille];
   char couleurs[7];
 	couleurs[0]='A'; couleurs[1]='B'; couleurs[2]='C'; couleurs[3]='D'; couleurs[4]='E'; couleurs[5]='F'; couleurs[6]='G';
@@ -11,9 +11,9 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
   for(l=0;l<6,l++){
   
   for(i=0;i<taille;i++){
-		for(j=0;j<taille;j++){
-      tab[i][j]=get_cell(i,j, tableau)
-    }
+	  for(j=0;j<taille;j++){
+      		tab[i][j]=get_cell(i,j, tableau)
+    	}
    }
    
   
@@ -34,42 +34,42 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		
 		if((x-1!=-1)){
 			
-				if(tab[x-1][y]==couleur[l]){
-					set_cell(x-1,y,perso, tableau);
-				  positions[compte][1]=x-1;
-				  positions[compte][2]=y;
-				  compte=compte+1;
+			if(tab[x-1][y]==couleur[l]){
+				set_cell(x-1,y,perso, tableau);
+				positions[compte][1]=x-1;
+				positions[compte][2]=y;
+				compte=compte+1;
 			}
 		}
 		if((x+1!=taille)){
 			
-				if(tab[x+1][y]==couleur[l]){
-					set_cell(x+1,y,perso, tableau);
-          positions[compte][1]=x+1;
-				  positions[compte][2]=y;
-				  compte=compte+1;
-				}
+			if(tab[x+1][y]==couleur[l]){
+				set_cell(x+1,y,perso, tableau);
+          			positions[compte][1]=x+1;
+				positions[compte][2]=y;
+				compte=compte+1;
+			}
 			
 		}
 		
 		if((y+1!=taille)){
 			
-				if(tab[x][y+1]==couleur[l]){
-					set_cell(x,y+1,perso, tableau);
-          positions[compte][1]=x;
-				  positions[compte][2]=y+1;
-				  compte=compte+1;
+			if(tab[x][y+1]==couleur[l]){
+				set_cell(x,y+1,perso, tableau);
+          			positions[compte][1]=x;
+				positions[compte][2]=y+1;
+				compte=compte+1;
 				
 			}
 		}
 		if((y-1!=-1)){
 			
-				if(tab[x][y-1]==couleur[l]){
-					set_cell(x,y-1,perso, tableau);
-          positions[compte][1]=x;
-				  positions[compte][2]=y-1;
-				  compte=compte+1;
-				}
+			if(tab[x][y-1]==couleur[l]){
+				set_cell(x,y-1,perso, tableau);
+         			 positions[compte][1]=x;
+				 positions[compte][2]=y-1;
+				 compte=compte+1;
+			}
 			
 		}
 	}
@@ -87,7 +87,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		int y=positions[k][2]; 	 
 		
 		if((x-1!=-1)){
-			couleur_char=get_cell(x-1,y, tableau);
+			couleur_char=tab[x-1][y];
 			if ((couleur_char!='^') && (couleur_char!='v')){
 				couleur_int=char_to_int(couleur_char); // associe à chaque couleur A,B,C,D,E,F,G un chiffre entre 0 et 6
 				couleur_compte[couleur_int]=couleur_compte[couleur_int]+1;
@@ -97,7 +97,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		
 		
 		if((x+1!=taille)){
-			couleur_char=get_cell(x+1,y, tableau);
+			couleur_char=tab[x+1][y];
 			if ((couleur_char!='^') && (couleur_char!='v')){
 				couleur_int=char_to_int(couleur_char); 
 				couleur_compte[couleur_int]=couleur_compte[couleur_int]+1;
@@ -107,7 +107,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		
 		
 		if((y-1!=-1)){
-			couleur_char=get_cell(x,y-1, tableau);
+			couleur_char=couleur_char=tab[x][y-1];
 			if ((couleur_char!='^') && (couleur_char!='v')){
 				couleur_int=char_to_int(couleur_char); 
 				couleur_compte[couleur_int]=couleur_compte[couleur_int]+1;
@@ -117,7 +117,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 		
 		
 		if((y+1!=taille)){
-			couleur_char=get_cell(x,y+1, tableau);
+			couleur_charcouleur_char=tab[x][y+1];
 			if ((couleur_char!='^') && (couleur_char!='v')){
 				couleur_int=char_to_int(couleur_char); 
 				couleur_compte[couleur_int]=couleur_compte[couleur_int]+1;
@@ -128,7 +128,7 @@ char glouton(char perso, char *tableau, int taille){ //va choisir la couleur qui
 	int max=0; //on cherche maintenant la couleur prédominante
 	int nb_max=0;
 
-	for (l=0;l<7;l++){
+	for (m=0;m<7;m++){
 		if (couleur_compte[l]>nb_max){
 			max=l;
 			nb_max=couleur_compte[l];
