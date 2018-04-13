@@ -1,0 +1,17 @@
+char get_cell(int x, int y, char *board);
+int score(char perso, int taille, char *tableau);
+void pourcentage (char joueur, int taille, char *tableau);
+void set_cell(int x, int y, char color, char *board);
+void generate_board (int taille, char *tableau);
+void change_color(char perso, char couleur, int taille, char *tableau);
+int char_to_int(char couleur_char);
+char glouton(char perso, char *tableau, int taille);
+char random_color();
+char random_possible_color(char perso, char *tableau, int taille);
+char hegemonique(char perso, char *tableau, int taille);
+void partie_pvp();
+void partie_glouton_aleatoire();
+void partie_joueur_aleatoire();
+void print_board(void);
+char glouton_prevoyant(char perso, char *tableau, int taille);
+char bon_glouton(char perso, char *tableau, int taille);
