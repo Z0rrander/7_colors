@@ -52,7 +52,7 @@ char bon_glouton(char perso, char *tableau, int taille){
 			
 					if(tab_test[x-1][y]==couleur){
 						tab_test[x-1][y]=perso;
-						positions_bis[compte_ter][1]=x;
+						positions_bis[compte_ter][1]=x-1;
 						positions_bis[compte_ter][2]=y;
 						compte_ter=compte_ter+1;
 				
@@ -62,7 +62,7 @@ char bon_glouton(char perso, char *tableau, int taille){
 			
 					if(tab_test[x+1][y]==couleur){
 						tab_test[x+1][y]=perso;
-						positions_bis[compte_ter][1]=x;
+						positions_bis[compte_ter][1]=x+1;
 						positions_bis[compte_ter][2]=y;
 						compte_ter=compte_ter+1;
 					}
@@ -74,7 +74,7 @@ char bon_glouton(char perso, char *tableau, int taille){
 					if(tab_test[x][y+1]==couleur){
 						tab_test[x][y+1]=perso;
 						positions_bis[compte_ter][1]=x;
-						positions_bis[compte_ter][2]=y;
+						positions_bis[compte_ter][2]=y+1;
 						compte_ter=compte_ter+1;
 				
 					}
@@ -84,7 +84,7 @@ char bon_glouton(char perso, char *tableau, int taille){
 					if(tab_test[x][y-1]==couleur){
 						tab_test[x][y-1]=perso;
 						positions_bis[compte_ter][1]=x;
-						positions_bis[compte_ter][2]=y;
+						positions_bis[compte_ter][2]=y-1;
 						compte_ter=compte_ter+1;
 					}
 			
